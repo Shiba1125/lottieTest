@@ -1,0 +1,156 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background: lightgrey;
+  overflow: hidden;
+  position: relative;
+}
+
+.firework {
+  position: absolute;
+  width: 200vw;
+  height: 200vh;
+  left: 50%;
+  top: -300px;
+  transform: translateX(-50%);
+}
+
+.go {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  background-color: red;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.4) 1px 1px 1px;
+}
+
+.cracker {
+  position: absolute;
+  z-index: 5;
+  bottom: 240px;
+  left: 50%;
+  width: 212px;
+  height: 212px;
+  background-image: url("./firecracker.png");
+  background-size: contain;
+  transform: rotate(-45deg) translateX(-72%);
+  animation: crackerSlideUp 1s ease-in forwards, shake 0.6s infinite ease-in-out alternate;
+  animation-play-state: paused, running;
+}
+
+.smoke {
+  z-index: 4;
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -330px;
+  animation: smokeSlideUp 1s ease-in forwards;
+  animation-play-state: paused;
+}
+
+.explode {
+  z-index: 4;
+  position: absolute;
+  width: 900px;
+  height: 500px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: glow 1s forwards ease-in;
+  animation-play-state: paused;
+}
+
+.roller {
+  position: absolute;
+  z-index: 1;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 790px;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.gift {
+  width: 100%;
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+.gift.active {
+  background: yellow;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+.content2 {
+  position: absolute;
+  width: 100%;
+  top: 1200px;
+}
+
+@keyframes shake {
+  from {
+    transform: rotate(-45deg) translate(-72%, 0px);
+  }
+  to {
+    transform: rotate(-45deg) translate(-72%, 10px);
+  }
+}
+@keyframes crackerSlideUp {
+  from {
+    bottom: 240px;
+  }
+  to {
+    bottom: 520px;
+  }
+}
+@keyframes smokeSlideUp {
+  from {
+    opacity: 0;
+    bottom: -330px;
+  }
+  to {
+    opacity: 1;
+    bottom: -50px;
+  }
+}
+@keyframes glow {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes rotate {
+  from {
+    left: 50%;
+    transform: rotate(0) translate(-80%, 0px);
+  }
+  to {
+    transform: rotate(360deg) translate(-80%, 0px);
+    left: 140vw;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
